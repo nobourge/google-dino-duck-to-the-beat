@@ -1,3 +1,6 @@
+// todo modify to use esp8266 via the new vma205 library
+
+
 /**
  * This example turns the ESP32 into a Bluetooth LE keyboard that writes the words, presses Enter, presses a media key and then Ctrl+Alt+Delete
  */

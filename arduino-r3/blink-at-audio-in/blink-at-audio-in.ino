@@ -31,6 +31,8 @@ void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(AUDIO_IN_PIN, INPUT);
+    Serial.begin(19200);
+
 }
 
 // the loop function runs over and over again forever
@@ -39,10 +41,22 @@ void loop() {
   if (db_val == HIGH)
   {
     digitalWrite(LED_BUILTIN, HIGH);
+      Serial.write("Switching ON");
+
   }
   else
   {
+  
     digitalWrite(LED_BUILTIN, LOW);
+      Serial.write("Switching OFF");
+    while (db_val != HIGH)
+    {
+      //Serial.write(" OFF");
+
+      db_val    =  digitalRead(AUDIO_IN_PIN);  // Analog Digital converter value
+    }
+
   }
+      //delay(100);
+
  }
- 
